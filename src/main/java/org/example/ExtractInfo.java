@@ -53,7 +53,7 @@ public class ExtractInfo {
 
         // Imprime el encabezado de la tabla
         System.out.println("\nDatos de la Tabla:");
-        System.out.printf("%-20s %-20s %-20s\n", "Description", "Category", "Amount"); // Ajusta según tus columnas
+        System.out.printf("%-20s %-20s %-20s\n", "Description", "Category", "Amount");
         System.out.println("--------------------------------------------------------");
 
 
