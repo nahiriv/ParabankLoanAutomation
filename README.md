@@ -32,7 +32,7 @@ Use any username and password (e.g., myName, 123). 🔑
 
 3. Compile and run the program:
   ```bash
-  javac ExtractInfo.java
+  javac UserActions.java
   java ExtractInfo
   ```
 
