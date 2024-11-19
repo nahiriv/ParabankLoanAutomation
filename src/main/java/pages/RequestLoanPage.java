@@ -10,7 +10,7 @@ public class RequestLoanPage {
     private By downPaymentField = By.id("downPayment");
     private By fromAccountDropDown = By.id("fromAccountId");
     private By applyButton = By.xpath("//input[@value='Apply Now']");
-    private By successMessageTitle = By.className("title");
+    private By successMessageDivId = By.cssSelector("div#loanRequestApproved > p");
 
     public RequestLoanPage(WebDriver driver) {
         this.driver = driver;
@@ -32,7 +32,7 @@ public class RequestLoanPage {
         driver.findElement(applyButton).click();
     }
 
-    public String getSuccessMessage() {
-        return driver.findElement(successMessageTitle).getText();
+    public String retrieveSuccessMessage() {
+        return driver.findElement(successMessageDivId).getText();
     }
 }

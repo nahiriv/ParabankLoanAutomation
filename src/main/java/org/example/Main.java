@@ -24,15 +24,15 @@ public class Main {
             // Registration process
             driver.get(REGISTER_URL);
             RegisterPage registerPage = new RegisterPage(driver);
-            registerPage.enterFirstName("John");
-            registerPage.enterLastName("Doe");
+            registerPage.enterFirstName("rauw");
+            registerPage.enterLastName("alejandro");
             registerPage.enterStreet("123 Main St");
             registerPage.enterCity("Anytown");
             registerPage.enterState("CA");
             registerPage.enterZipCode("12345");
             registerPage.enterPhoneNumber("555-123-4567");
             registerPage.enterSSN("123-45-6789");
-            registerPage.enterUsername("johndoe");
+            registerPage.enterUsername("rauw");
             registerPage.enterPassword("password123");
             registerPage.enterRepeatedPassword("password123");
             registerPage.clickRegister();
@@ -40,7 +40,7 @@ public class Main {
             // Login process
             driver.get(REGISTER_URL); // Corrected URL to login
             LoginPage loginPage = new LoginPage(driver);
-            loginPage.enterUsername("johndoe");
+            loginPage.enterUsername("rauw");
             loginPage.enterPassword("password123");
             loginPage.clickLogin();
 
@@ -56,6 +56,11 @@ public class Main {
             requestLoanPage.enterLoanAmount("100");
             requestLoanPage.enterDownPayment("80");
             requestLoanPage.clickApplyButton();
+            Thread.sleep(20000); // Adjusted time to 10 seconds instead of 30
+
+            // Retrieve and print the success message
+            String successMessage = driver.findElement(By.id("loanRequestApproved")).getText();
+            System.out.println("Success Message: " + successMessage);
 
             Thread.sleep(20000); // Adjusted time to 10 seconds instead of 30
         } catch (Exception e) {
