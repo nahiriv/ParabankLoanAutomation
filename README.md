@@ -1,4 +1,4 @@
-# 📈 Parabank Loan Information Extractor
+# 📈 Parabank Loan Test
 
 A Java project utilizing **Selenium WebDriver** to automate user interactions with the Parabank demo site, including registration, login, and loan request functionality. 🌐
 
