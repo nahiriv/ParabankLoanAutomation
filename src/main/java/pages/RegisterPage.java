@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 /**
  * Represents the registration page and provides methods for interacting
- * with the registration form.
+ * with the registration form of the Parabank web application.
  */
 public class RegisterPage {
 
