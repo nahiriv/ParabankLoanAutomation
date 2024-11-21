@@ -3,6 +3,11 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * The LoginPage class represents the login page functionality of a web application.
+ * This class provides methods to interact with the login elements: username,
+ * password, and login button.
+ */
 public class LoginPage {
     private WebDriver driver;
 

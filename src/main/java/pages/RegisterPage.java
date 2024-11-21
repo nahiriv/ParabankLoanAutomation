@@ -3,6 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+/**
+ * Represents the registration page and provides methods for interacting
+ * with the registration form.
+ */
 public class RegisterPage {
 
     private WebDriver driver;

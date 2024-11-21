@@ -2,7 +2,15 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
+/**
+ * Represents the Request Loan page and provides methods to interact with the loan application form.
+ */
 public class RequestLoanPage {
     private WebDriver driver;
 
@@ -10,7 +18,7 @@ public class RequestLoanPage {
     private By downPaymentField = By.id("downPayment");
     private By fromAccountDropDown = By.id("fromAccountId");
     private By applyButton = By.xpath("//input[@value='Apply Now']");
-    private By successMessageDivId = By.cssSelector("div#loanRequestApproved > p");
+    private By successMessageDivId = By.xpath("/html/body/div[1]/div[3]/div[2]/div/div[2]/table/tbody/tr[3]/td[2]");
 
     public RequestLoanPage(WebDriver driver) {
         this.driver = driver;
@@ -33,6 +41,17 @@ public class RequestLoanPage {
     }
 
     public String retrieveSuccessMessage() {
-        return driver.findElement(successMessageDivId).getText();
+        // Usar WebDriverWait para esperar a que el elemento sea visible
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement successMessageElement = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(successMessageDivId)
+        );
+
+        // Recuperar el texto del elemento WebElement
+        String successMessage = successMessageElement.getText();
+
+        // Imprimir el mensaje de éxito a la consola
+        System.out.println("Status: " + successMessage);
+        return successMessage;
     }
 }
